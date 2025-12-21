@@ -26,6 +26,20 @@
     color:var(--gray-clr)
 }
 
+li{
+    list-style:none;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
 
 .navbar-logo{
     width: 8.5rem;
@@ -91,13 +105,42 @@ h1{
     font-size: .8rem;
 }
 
+.about-me{
+    width:35rem;
+    margin: 0 auto;
+}
+
+.section-container{
+    padding-block: 4rem;
+}
+
+.glow{
+    position: relative;
+}
 
 
+.glow::before{
+    content:"";
+    background: var(--green-clr);
+    inset: 4rem;
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    filter:blur(70px)
+}
 
 
+.hover-card:hover{
+    background: var(--green-clr);
+}
 
+.hover-card:hover *{
+    color:black !important;
+}
 
-
+.mycard{
+    width: 21rem;
+}
 
 
 
@@ -124,4 +167,7 @@ h1{
     min-height: 72vh;
 }
     
+.about-me{
+    width: 23rem;
+}
 }
