@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdul Rehman Portfolio</title>
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/> 
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
     
 </head>
 <body class="bg-black">
@@ -15,7 +17,7 @@
 
 <nav class="navbar navbar-expand-lg  py-3">
   <div class="container">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="">
         <img src="images/logo.png" alt="logo" class="navbar-logo">
     </a>
     <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,25 +26,25 @@
     <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
       <ul class="navbar-nav m-auto mb-2 mb-lg-0 gap-3">
         <li class="nav-item">
-          <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+          <a class="nav-link active text-white" aria-current="page" href="#home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">About</a>
+          <a class="nav-link text-white" href="#about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Portfolio</a>
+          <a class="nav-link text-white" href="#portfolio">Portfolio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Work</a>
+          <a class="nav-link text-white" href="#work">Work</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Blog</a>
+          <a class="nav-link text-white" href="#blog">Blog</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Contact</a>
+          <a class="nav-link text-white" href="#contact">Contact</a>
         </li>
       </ul>
-      <a class="btn mybtn rounded-0 text-uppercase bg-green" href="#" role="button">LET'S TALK</a>
+      <a class="btn mybtn rounded-0 text-uppercase bg-green" href="#contact"role="button">LET'S TALK</a>
     </div>
   </div>
 </nav>
@@ -70,7 +72,7 @@
 <!-- All Sections Start Here -->
 
 <main>
-  <section class="hero-section d-flex align-items-center">
+  <section class="hero-section d-flex align-items-center" id="home">
     <div class="container">
     <div class="row align-items-center gap-5 gap-lg-0">
 
@@ -80,7 +82,7 @@
         <p class="txt-gray my-4 para">
           Hi I am Abdul Rehman, a passionate web Developer based in Pakistan.Welcome to my portfolio.
         </p>
-        <a class="btn mybtn rounded-0 text-uppercase bg-green" href="#" role="button">View Portfolio</a>
+        <a class="btn mybtn rounded-0 text-uppercase bg-green" href="#home" role="button">View Portfolio</a>
         </div>
 
       <div class="col-lg-6">
@@ -92,12 +94,12 @@
 </section>
 
 
-<section class="section-container">
+<section class="section-container" id="about">
   <div class="container">
     <div class="row align-items-center gap-5 gap-lg-0">
       <div class="col-lg-6  order-last order-lg-first">
         <div class="about-me glow">
-          <img src="images/about me.png" alt="About Me">
+          <img src="images/about me 1.png" alt="About Me">
         </div>
       </div>
 
@@ -114,14 +116,14 @@
         Do you have fancy saying hi to me or you want to get started need my help? feel free to contact me. 
         <a href="#" class="txt-green d-block">www.rehmanbanday5@gmail.com</a>
         </p>
-        <a class="btn mybtn rounded-0 text-uppercase bg-green" href="#" role="button">Hire Me</a>
+        <!-- <a class="btn mybtn rounded-0 text-uppercase bg-green" href="#" role="button">Hire Me</a> -->
       </div>
     </div>
   </div>
 </section>
 
 
-<section class="section-container">
+<section class="section-container" id="work">
   <div class="container text-center">
     <span class="text-white text-uppercase main-txt">What I will do for you</span>
     <h2 class="txt-green fw-semibold">Services</h2>
@@ -171,7 +173,7 @@
 
 
 
-<section class="section-container">
+<section class="section-container" id="portfolio">
    <div class="container text-center">
    <span class="text-white text-uppercase main-txt">Some of my recent works</span>
   <h2 class="txt-green fw-semibold">Portfolio</h2>
@@ -253,9 +255,253 @@
        </div>
        </div>
        </div>
-
 </section>
+
+
+
+
+
+
+<section class="section-container">
+  <div class="container text-center">
+  <span class="text-white text-uppercase main-txt">What my clients says</span>
+  <h2 class="txt-green fw-semibold">Testimonials</h2>
+
+    <div class="swiper mySwiper mt-5">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide bg-dark-blue p-4 rounded">
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="profile">
+              <img src="images/client 1.jpg" alt="client">
+            </div>
+          </div>
+          <div class="col-lg-10 text-start">
+            <h5 class="text-white">Ibrahim Azhar</h5>
+            <p class="text-white">Designer</p>
+          </div>
+        </div>
+        <div class="row-">
+        <p class="txt-gray text-start">I recently had the pleasure with working with Abdul Rehman for a complete overhaul of my 
+        website and I can honestly say it was one of the bst decisions I've made for my business!</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide bg-dark-blue p-4 rounded">
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="profile">
+              <img src="images/client 2.jpg" alt="client">
+            </div>
+          </div>
+          <div class="col-lg-10 text-start">
+            <h5 class="text-white">Muhammad Umar</h5>
+            <p class="text-white">Designer</p>
+          </div>
+        </div>
+        <div class="row-">
+        <p class="txt-gray text-start">I recently had the pleasure with working with Abdul Rehman for a complete overhaul of my 
+        website and I can honestly say it was one of the bst decisions I've made for my business!</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide bg-dark-blue p-4 rounded">
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="profile">
+              <img src="images/client 3.jpg" alt="client">
+            </div>
+          </div>
+          <div class="col-lg-10 text-start">
+            <h5 class="text-white">Muhammad Ali</h5>
+            <p class="text-white">Designer</p>
+          </div>
+        </div>
+        <div class="row-">
+        <p class="txt-gray text-start">I recently had the pleasure with working with Abdul Rehman for a complete overhaul of my 
+        website and I can honestly say it was one of the bst decisions I've made for my business!</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide bg-dark-blue p-4 rounded">
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="profile">
+              <img src="images/client 4.jpg" alt="client">
+            </div>
+          </div>
+          <div class="col-lg-10 text-start">
+            <h5 class="text-white">Abdul Hadi</h5>
+            <p class="text-white">Designer</p>
+          </div>
+        </div>
+        <div class="row-">
+        <p class="txt-gray text-start">I recently had the pleasure with working with Abdul Rehman for a complete overhaul of my 
+        website and I can honestly say it was one of the bst decisions I've made for my business!</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide bg-dark-blue p-4 rounded">
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="profile">
+              <img src="images/client 5.jpg" alt="client">
+            </div>
+          </div>
+          <div class="col-lg-10 text-start">
+            <h5 class="text-white">Abdul Noor</h5>
+            <p class="text-white">Designer</p>
+          </div>
+        </div>
+        <div class="row-">
+        <p class="txt-gray text-start">I recently had the pleasure with working with Abdul Rehman for a complete overhaul of my 
+        website and I can honestly say it was one of the bst decisions I've made for my business!</p>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="section-container" id="blog">
+   <div class="container text-center">
+   <span class="text-white text-uppercase main-txt">Latest Blogs</span>
+  <h2 class="txt-green fw-semibold">Blog</h2>
+   <div class="row justify-content-center mt-5 gap-5">
+      <div class="col-lg-4 blog-card glow">
+        <div class="card bg-dark-blue px-3 pb-3 ">
+        <img src="images/blog 1.jpg" class="card-img-top" alt="ViewScape">
+        <div class="card-body">
+        <h5 class="card-title text-white">Programming Proespective</h5>
+        <p class="card-text txt-gray">Providing prospectus provides expert tutorials and insights to elevate coding skills and keep up
+        with tech trends </p>
+        <a class="btn mybtn rounded-0 text-uppercase bg-green" href="#" role="button">View Blog</a>
+
+       </div>
+       </div>
+       </div>
+
+
+
+      <div class="col-lg-4 blog-card glow">
+        <div class="card bg-dark-blue px-3 pb-3 ">
+        <img src="images/blog 2.jpg" class="card-img-top" alt="BazzarBoy">
+        <div class="card-body">
+        <h5 class="card-title text-white">Web development & AI</h5>
+        <p class="card-text txt-gray">Web development & AI explores trends, tutorials, and innovatives in web tech and artificial intelligence
+        for developers.
+        </p>
+        <a class="btn mybtn rounded-0 text-uppercase bg-green" href="#" role="button">View Blog</a>
+       </div>
+       </div>
+       </div>
+
+
+
+      <div class="col-lg-4 blog-card glow">
+        <div class="card bg-dark-blue px-3 pb-3 ">
+        <img src="images/blog 3.jpg" class="card-img-top" alt="BazzarBoy">
+        <div class="card-body">
+        <h5 class="card-title text-white">Design Patterns & Principles</h5>
+        <p class="card-text txt-gray">Explore essential design Patterns and Principles to enhance code quality, maintainablity
+        and scalability effectively</p>
+        <a class="btn mybtn rounded-0 text-uppercase bg-green" href="#" role="button">View Blog</a>
+       </div>
+       </div>
+       </div>
+      </div>
+       </section>
+
+
+
+
+
+
+
+       <section class="section-container" id="contact">
+       <div class="container text-center">
+             <span class="text-white text-uppercase main-txt">Get in touch</span>
+             <h2 class="txt-green fw-semibold">Contact</h2>
+
+      <form class="bg-green mx-auto px-4 py-5 rounded-3 mt-5">
+      <div class="mb-4">
+      <input type="text" class="form-control py-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Name">
+      </div>
+      <div class="mb-4">
+      <input type="email" class="form-control py-2" id="exampleInputPassword1" placeholder="Your Email">
+      </div>
+      <div class="mb-4">
+      <input type="text" class="form-control py-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Subject">
+      </div>
+      <div class="mb-4">
+      <textarea class="form-control" placeholder="Your Message" id="floatingTextarea"></textarea>
+      </div>
+      <button type="submit" class="btn mybtn text-white rounded-0 text-uppercase bg-black">Send Message</button>
+      </form>
+    </div> 
+  </section>
 </main>
+
+<!-- Footer Starts-->
+
+<footer class="my-3">
+  <div class="container">
+    <div class="line"></div>
+    <div class="row mt-3 gap-4 gap-lg-0">
+      <div class="col-lg-6 d-flex justify-content-sm-start justify-content-center">
+        <a href="https://www.instagram.com/abdul__rehman.1/" target="_blank"><i class="fa-brands fa-instagram txt-green fs-5"></i> </a>
+        <a href="https://www.linkedin.com/in/abdul-rehman-banday-40726a28a/" target="_blank" class="ms-2"> <i class="fa-brands fa-linkedin txt-green fs-5"></i></a>
+        <a href="https://github.com/rehmanbanday5" target="_blank" class="ms-2"> <i class="fa-brands fa-github txt-green fs-5"></i></a>
+      </div>
+      <div class="col-lg-6">
+        <p class="txt-gray text-lg-end text-center">Copyright &copy; 2025-All rights are reserved by Abdul Rehman 👑 </p>
+      </div>
+    </div>
+
+  </div>
+  
+</footer>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -267,5 +513,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 </body>
 </html>
