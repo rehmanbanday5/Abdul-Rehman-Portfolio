@@ -29,7 +29,7 @@ Welcome to my personal portfolio website! This project showcases my skills as a 
 ## 🚀 Live Demo
 
 You can view the live version of my portfolio here:  
-[Abdul Rehman Portfolio]([https://Arehman-portfolio.vercel.app/](https://abdul-rehman-banday-portfolio.vercel.app/))  
+[Abdul Rehman Portfolio]((https://abdul-rehman-banday-portfolio.vercel.app/))  
 
 ---
 
