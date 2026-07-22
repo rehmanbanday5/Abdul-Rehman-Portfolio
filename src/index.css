@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+@theme {
+  /* Surfaces */
+  --color-void: #0a0a0d;
+  --color-surface: #141419;
+  --color-surface-raised: #1b1b22;
+  --color-surface-hover: #222229;
+  --color-hairline: #232329;
+  --color-hairline-strong: #34343e;
+
+  /* Ink (text) — warm off-white, not clinical blue-white */
+  --color-ink: #f1efe9;
+  --color-ink-soft: #b6b3ac;
+  --color-ink-mute: #7d7a73;
+
+  /* Signature accents */
+  --color-signal: #ff5a36;
+  --color-signal-soft: #ff5a361f;
+  --color-mint: #8fe3c0;
+  --color-mint-soft: #8fe3c01f;
+  --color-sand: #d8c9a3;
+
+  /* Typography */
+  --font-display: "Fraunces", "Iowan Old Style", serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    background-color: var(--color-void);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: var(--color-signal);
+    color: var(--color-void);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-void);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-hairline-strong);
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-signal);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer utilities {
+  .container-px {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .container-px {
+      padding-left: 3.5rem;
+      padding-right: 3.5rem;
+    }
+  }
+
+  /* Fine film-grain texture — replaces the old grid background */
+  .grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
+
+  .radial-veil::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse 55% 45% at 50% 0%, rgba(255, 90, 54, 0.10), transparent 70%);
+  }
+
+  /* Corner-bracket frame — signature motif used across the site */
+  .bracket-frame {
+    position: relative;
+  }
+  .bracket-frame::before,
+  .bracket-frame::after,
+  .bracket-frame > .bracket-tr,
+  .bracket-frame > .bracket-bl {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-color: var(--color-hairline-strong);
+    transition: border-color 0.25s var(--ease-out-quart);
+  }
+  .bracket-frame::before {
+    top: -1px;
+    left: -1px;
+    border-top: 1.5px solid;
+    border-left: 1.5px solid;
+  }
+  .bracket-frame::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 1.5px solid;
+    border-right: 1.5px solid;
+  }
+  .bracket-frame:hover::before,
+  .bracket-frame:hover::after {
+    border-color: var(--color-signal);
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 1px var(--color-hairline-strong);
+    color: transparent;
+  }
+}
+
+/* Custom cursor — only active on fine-pointer, non-touch devices */
+html.cursor-ready, html.cursor-ready * {
+  cursor: none !important;
+}
+
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  background-color: transparent;
+}
+.cursor-ring[data-state="hover"] {
+  width: 64px;
+  height: 64px;
+  background-color: var(--color-ink);
+  border-color: transparent;
+  mix-blend-mode: normal;
+}
+.cursor-ring[data-state="hover"] ~ .cursor-dot,
+.cursor-ring[data-state="hover"] {
+  transition-timing-function: var(--ease-out-quart);
+}
+.cursor-ring[data-state="text"] {
+  width: 2px;
+  height: 22px;
+  border-radius: 2px;
+  background-color: var(--color-signal);
+  border-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
