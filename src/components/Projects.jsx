@@ -35,7 +35,6 @@ export default function Projects() {
           index="03"
           label="Projects"
           title="A few things I've built."
-          description="Placeholder projects below — swap these for your real work in src/data/projects.js."
         />
 
         <div className="mt-20 flex flex-col gap-24 md:gap-32">
@@ -77,7 +76,7 @@ function ProjectCard({ project, index, reversed }) {
             src={project.image}
             alt={`${project.name} preview`}
             loading="lazy"
-            className="w-full aspect-[8/5] object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+            className="w-full aspect-[16/9] object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
           />
           <div className="absolute inset-0 bg-void/0 group-hover:bg-void/20 transition-colors duration-500" />
         </a>

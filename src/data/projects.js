@@ -1,57 +1,95 @@
-// ---------------------------------------------------------------------------
-// EDIT ME: Replace with your real projects. Add as many objects as you like —
-// the Projects section renders every entry in this array automatically.
-// `image` accepts any path inside /public or an external URL.
-// ---------------------------------------------------------------------------
+import Ecommerce from "../assets/Ecommerce.jpeg"
+import Snapup from "../assets/Snapup.jpeg"
+import Launch from "../assets/Launch.jpeg"
+import TaskApp from "../assets/TaskApp.jpeg"
+import WeatherApp from "../assets/WeatherApp.jpeg"
 
 export const projects = [
   {
     id: "proj-01",
-    name: "ShopStack — E-Commerce Platform",
+    name: "Noorza — E-Commerce Platform",
     description:
-      "A full-featured e-commerce application with product catalog, cart, and checkout flow. Built to explore secure authentication and real-world state management at scale.",
-    image: "/projects/placeholder-1.svg",
-    tech: ["React", "Node.js", "Express", "MongoDB", "Stripe", "Redux Toolkit"],
+      "A modern e-commerce platform built to deliver a smooth and responsive online shopping experience, with product browsing, cart functionality, and a clean user interface.",
+    image: Ecommerce,
+    tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
     features: [
-      "JWT-based authentication with role-based access",
-      "Cart and order flow with persisted state",
-      "Admin dashboard for product & order management",
-      "Stripe test-mode checkout integration",
+      "Responsive and modern e-commerce user interface",
+      "Product browsing and shopping cart functionality",
+      "Backend API built with Node.js and Express",
+      "MongoDB database integration for managing application data",
     ],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/your-username/shopstack",
+    liveUrl: "https://noorza-ecommerce-frontend.vercel.app",
+    githubUrl: "https://github.com/rehmanbanday5/NoorzaEcommerce",
     featured: true,
   },
   {
     id: "proj-02",
-    name: "TaskFlow — Team Task Manager",
+    name: "Snapup — E-Commerce Project",
     description:
-      "A collaborative task board inspired by Trello, with drag-and-drop boards, real-time updates, and per-project team access.",
-    image: "/projects/placeholder-2.svg",
-    tech: ["React", "Express", "MongoDB", "Socket.IO", "Tailwind CSS"],
+      "An e-commerce website designed for a smooth online shopping experience, featuring a clean product-focused interface and essential shopping functionality.",
+    image: Snapup,
+    tech: ["React", "JavaScript", "Redux Toolkit", "React Router", "Sass"],
     features: [
-      "Drag-and-drop kanban board with optimistic UI",
-      "Real-time updates via WebSockets",
-      "Project-level permissions and invites",
+      "Clean and responsive e-commerce user interface",
+      "Product browsing and shopping experience",
+      "Shopping cart functionality",
+      "State management with Redux Toolkit",
     ],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/your-username/taskflow",
+
+    liveUrl: "https://snapup-ecommerce-project.vercel.app",
+    githubUrl: "https://github.com/rehmanbanday5/Snapup-Ecommerce",
     featured: true,
   },
   {
     id: "proj-03",
-    name: "DevNotes — Markdown Knowledge Base",
+    name: "Launch Landing Page",
     description:
-      "A personal knowledge base for developers, supporting markdown notes, tagging, and full-text search.",
-    image: "/projects/placeholder-3.svg",
-    tech: ["React", "Node.js", "MongoDB", "Express"],
+      "A practice landing page built to explore modern website layouts and responsive front-end development, featuring a product-focused hero section, services, feature highlights, pricing plans, and a contact section.",
+    image: Launch,
+    tech: ["HTML", "CSS"],
     features: [
-      "Live markdown preview with syntax highlighting",
-      "Full-text search across notes and tags",
-      "Offline-friendly local draft caching",
+      "Responsive landing page layout with multiple content sections",
+      "Product-focused hero section with clear call-to-action buttons",
+      "Feature, services, and pricing sections",
+      "Contact form with a clean and structured interface",
     ],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/your-username/devnotes",
-    featured: false,
+
+    liveUrl: "https://launch-landing-website.vercel.app",
+    githubUrl: "https://github.com/rehmanbanday5/Launch-Landing-Website",
+    featured: true,
+  },
+  {
+    id: "proj-01",
+    name: "Simple Task App",
+    description:
+      "A simple task management application built to practice interactive front-end development, allowing users to create tasks with descriptions, priority levels, and optional images.",
+    image: TaskApp,
+    tech: ["HTML", "CSS", "JavaScript"],
+    features: [
+      "Create tasks with title and description",
+      "Set task priority from Low, Medium, or High",
+      "Optional image upload for tasks",
+      "Simple and user-friendly task management interface",
+    ],
+    liveUrl: "https://simple-task-application.vercel.app",
+    githubUrl: "https://github.com/rehmanbanday5/Simple-Task-App",
+    featured: true,
+  },
+  {
+    id: "proj-05",
+    name: "Weather App",
+    description:
+      "A weather application built to practice working with real-time weather data and API integration, allowing users to search for a location and view its current weather conditions.",
+    image: WeatherApp,
+    tech: ["HTML", "CSS", "JavaScript", "Weather API"],
+    features: [
+      "Search weather conditions by location",
+      "Real-time weather data fetched through an API",
+      "Displays current temperature and weather conditions",
+      "Clean and responsive user interface",
+    ],
+    liveUrl: "https://rehman-weather-app.vercel.app",
+    githubUrl: "https://github.com/rehmanbanday5/Weather-App",
+    featured: true,
   },
 ];

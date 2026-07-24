@@ -1,13 +1,20 @@
 import { useEffect, useRef, useState } from "react";
-import { Menu, X } from "lucide-react";
-import { navLinks, profile } from "../data/profile";
+import { Menu, X, Sun, Moon } from "lucide-react";
+import { navLinks} from "../data/profile";
 import { scrollToId } from "../utils/scrollToId";
+
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("#home");
+  const [darkMode, setDarkMode] = useState(true);
   const menuRef = useRef(null);
+
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("light", !darkMode);
+  }, [darkMode]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -16,7 +23,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Track active section for nav highlighting
+  
   useEffect(() => {
     const sections = navLinks
       .map((link) => document.querySelector(link.href))
@@ -37,7 +44,7 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, []);
 
-  // Lock body scroll when mobile menu is open
+  
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => {
@@ -59,23 +66,23 @@ export default function Navbar() {
       }`}
     >
       <nav className="container-px mx-auto max-w-7xl flex items-center justify-between h-[72px]">
-        <a
-          href="#home"
-          onClick={(e) => {
-            e.preventDefault();
-            handleNavClick("#home");
-          }}
-          className="flex items-center gap-2.5 group"
-          aria-label="Go to top"
+        <button
+          type="button"
           data-cursor="hover"
+          onClick={() => setDarkMode((prev) => !prev)}
+          className="flex items-center justify-center w-12 h-12 rounded-full border border-hairline-strong text-ink hover:border-signal hover:text-signal transition-colors duration-300"
+          aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
         >
-          <span className="w-2 h-2 rounded-full bg-signal transition-transform duration-300 group-hover:scale-125" />
-          <span className="font-display text-lg text-ink tracking-tight">
-            {profile.firstName} <span className="text-ink-mute">Rehman</span>
+          <span
+            className={`transition-transform duration-500 ease-out ${
+              darkMode ? "rotate-180" : "rotate-0"
+            }`}
+          >
+            {darkMode ? <Sun size={22} /> : <Moon size={22} />}
           </span>
-        </a>
+        </button>
 
-        {/* Desktop nav */}
+        
         <ul className="hidden md:flex items-center gap-8 text-sm">
           {navLinks.map((link) => (
             <li key={link.href}>
@@ -86,7 +93,7 @@ export default function Navbar() {
                   e.preventDefault();
                   handleNavClick(link.href);
                 }}
-                className={`relative py-2 transition-colors duration-200 ${
+                className={`relative inline-block py-2 transition-all duration-300 hover:scale-105 ${
                   activeSection === link.href
                     ? "text-ink"
                     : "text-ink-soft hover:text-ink"
@@ -103,20 +110,9 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <a
-          href="#contact"
-          onClick={(e) => {
-            e.preventDefault();
-            handleNavClick("#contact");
-          }}
-          data-cursor="hover"
-          className="hidden md:inline-flex items-center gap-2 text-sm px-5 py-2.5 rounded-md border border-hairline-strong text-ink hover:border-signal hover:text-signal transition-colors duration-200"
-        >
-          Let&rsquo;s talk
-          <span className="text-signal">&rarr;</span>
-        </a>
+       
 
-        {/* Mobile toggle */}
+        
         <button
           type="button"
           data-cursor="hover"
@@ -129,7 +125,7 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
+      
       <div
         ref={menuRef}
         className={`md:hidden fixed inset-x-0 top-[72px] bottom-0 bg-void/98 backdrop-blur-md border-t border-hairline transition-all duration-300 ease-out ${
@@ -158,20 +154,10 @@ export default function Navbar() {
               </a>
             </li>
           ))}
-          <li className="pt-6">
-            <a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick("#contact");
-              }}
-              className="inline-flex items-center justify-center w-full font-body text-base px-4 py-3.5 rounded-md bg-signal text-void font-medium"
-            >
-              Let&rsquo;s talk
-            </a>
-          </li>
+        
         </ul>
       </div>
     </header>
   );
 }
+

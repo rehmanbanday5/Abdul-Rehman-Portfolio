@@ -7,7 +7,7 @@ import SectionHeading from "./SectionHeading";
 gsap.registerPlugin(ScrollTrigger);
 
 const levelWidth = {
-  Confident: "88%",
+  Confident: "85%",
   Comfortable: "62%",
   Learning: "34%",
 };

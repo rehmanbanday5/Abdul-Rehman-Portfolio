@@ -1,17 +1,10 @@
-/**
- * Signature hero visual: an abstract node graph representing the MERN
- * stack as connected nodes around a core — a quiet, geometric motif rather
- * than a literal code/terminal window. Pure SVG using theme-token colors.
- * Only the outer decorative ring rotates (via GSAP targeting
- * [data-hero-orbit] in Hero.jsx); nodes and labels stay fixed and legible.
- */
 const nodes = [
-  { label: "React", angle: -90, ring: 1 },
-  { label: "Node.js", angle: 25, ring: 1 },
-  { label: "Express", angle: 155, ring: 1 },
-  { label: "MongoDB", angle: 90, ring: 2 },
-  { label: "Tailwind", angle: -35, ring: 2 },
-  { label: "REST API", angle: 205, ring: 2 },
+  { label: "React", angle: -90, ring: 1, color: "#61DAFB" },
+  { label: "Node.js", angle: 25, ring: 1, color: "#F97316" },
+  { label: "Express", angle: 155, ring: 1, color: "#FFD166" },
+  { label: "MongoDB", angle: 90, ring: 2, color: "#00ED64" },
+  { label: "Tailwind", angle: -35, ring: 2, color: "#FF0000" },
+  { label: "REST API", angle: 205, ring: 2, color: "#B388FF" },
 ];
 
 function pointOnRing(angleDeg, radius, cx = 200, cy = 200) {
@@ -39,7 +32,7 @@ export default function StackGraph() {
 
       <circle cx="200" cy="200" r="120" fill="url(#coreGlow)" />
 
-      {/* Slowly rotating decorative ring — purely ornamental */}
+      
       <g data-hero-orbit style={{ transformOrigin: "200px 200px" }}>
         <circle
           cx="200"
@@ -53,7 +46,7 @@ export default function StackGraph() {
         <circle cx="200" cy="28" r="2.5" fill="var(--color-mint)" />
       </g>
 
-      {/* Static reference rings */}
+     
       <circle
         cx="200"
         cy="200"
@@ -73,7 +66,7 @@ export default function StackGraph() {
         strokeDasharray="2 6"
       />
 
-      {/* Connecting lines from core to each node */}
+   
       {nodes.map((node) => {
         const radius = node.ring === 1 ? 90 : 150;
         const p = pointOnRing(node.angle, radius);
@@ -90,7 +83,7 @@ export default function StackGraph() {
         );
       })}
 
-      {/* Nodes */}
+=
       {nodes.map((node) => {
         const radius = node.ring === 1 ? 90 : 150;
         const p = pointOnRing(node.angle, radius);
@@ -101,17 +94,17 @@ export default function StackGraph() {
             cx={p.x}
             cy={p.y}
             r={isPrimary ? 7 : 5.5}
-            fill={isPrimary ? "var(--color-signal)" : "var(--color-surface)"}
+            fill={node.color}
             stroke={isPrimary ? "none" : "var(--color-hairline-strong)"}
             strokeWidth="1.5"
           />
         );
       })}
 
-      {/* Labels */}
+      
       {nodes.map((node) => {
         const radius = node.ring === 1 ? 90 : 150;
-        const labelRadius = radius + (node.ring === 1 ? 26 : 24);
+        const labelRadius = radius + (node.ring === 1 ? 32 : 30);
         const p = pointOnRing(node.angle, labelRadius);
         return (
           <text
@@ -120,7 +113,7 @@ export default function StackGraph() {
             y={p.y}
             textAnchor="middle"
             dominantBaseline="middle"
-            className="fill-ink-mute"
+            className="fill-ink"
             style={{
               fontFamily: "var(--font-mono)",
               fontSize: "10px",
@@ -132,7 +125,7 @@ export default function StackGraph() {
         );
       })}
 
-      {/* Core */}
+      
       <circle
         cx="200"
         cy="200"

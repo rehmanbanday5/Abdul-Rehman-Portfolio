@@ -7,7 +7,7 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Journey from "./components/Journey";
-import WhyWorkWithMe from "./components/WhyWorkWithMe";
+
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import CustomCursor from "./components/CustomCursor";
@@ -15,7 +15,7 @@ import CustomCursor from "./components/CustomCursor";
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
-  // Recalculate trigger positions after images/fonts settle or on resize
+ 
   useEffect(() => {
     const refresh = () => ScrollTrigger.refresh();
     window.addEventListener("load", refresh);
@@ -36,7 +36,6 @@ function App() {
         <Skills />
         <Projects />
         <Journey />
-        <WhyWorkWithMe />
         <Contact />
       </main>
       <Footer />

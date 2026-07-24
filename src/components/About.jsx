@@ -9,21 +9,21 @@ gsap.registerPlugin(ScrollTrigger);
 const focusPoints = [
   {
     n: "01",
-    title: "What I focus on",
+    title: "What I build",
     description:
-      "End-to-end features — from MongoDB schema design to a polished, responsive React interface.",
+      "Modern and responsive web applications using HTML, CSS, JavaScript, Bootstrap, React, MongoDB, Express.js, and Node.js.",
   },
   {
     n: "02",
     title: "My approach",
     description:
-      "Understand the problem first, plan the data flow, then build in small, testable pieces.",
+      "I focus on understanding the requirements, writing clean code, and continuously learning while building projects that solve real-world problems.",
   },
   {
     n: "03",
     title: "Currently learning",
     description:
-      "System design fundamentals, automated testing, and deployment pipelines.",
+      "Python and expanding my programming skills by exploring its fundamentals and building small projects to strengthen my understanding.",
   },
 ];
 
@@ -62,7 +62,7 @@ export default function About() {
         <SectionHeading
           index="01"
           label="About"
-          title="A developer who likes building the whole thing."
+          title="From Database To Interface, I Build It All"
         />
 
         <div className="mt-16 grid lg:grid-cols-[1fr_0.9fr] gap-16 lg:gap-24 items-start">

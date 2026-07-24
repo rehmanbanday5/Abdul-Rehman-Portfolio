@@ -1,6 +1,3 @@
-// lucide-react no longer ships brand/logo icons, so these small,
-// stroke-consistent SVGs fill in for GitHub, LinkedIn, and X/Twitter.
-
 export function GithubIcon({ size = 20, className = "" }) {
   return (
     <svg
@@ -51,7 +48,7 @@ export function LinkedinIcon({ size = 20, className = "" }) {
   );
 }
 
-export function TwitterIcon({ size = 20, className = "" }) {
+export function InstagramIcon({ size = 20, className = "" }) {
   return (
     <svg
       width={size}
@@ -61,13 +58,32 @@ export function TwitterIcon({ size = 20, className = "" }) {
       className={className}
       aria-hidden="true"
     >
-      <path
-        d="M4 4l7.2 9.2L4.4 20H6l6.1-6.1L16.5 20H20l-7.5-9.6L19.6 4H18l-5.6 5.6L8 4H4Z"
+      <rect
+        x="3"
+        y="3"
+        width="18"
+        height="18"
+        rx="5"
         stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinejoin="round"
-        strokeLinecap="round"
+        strokeWidth="1.6"
+      />
+
+      <circle
+        cx="12"
+        cy="12"
+        r="4"
+        stroke="currentColor"
+        strokeWidth="1.6"
+      />
+
+      <circle
+        cx="17.5"
+        cy="6.5"
+        r="1"
+        fill="currentColor"
       />
     </svg>
   );
 }
+
+

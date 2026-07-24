@@ -1,8 +1,3 @@
-/**
- * Reusable section heading.
- * Index renders as a small bracketed tag, e.g. "[ 02 — Skills ]" — a quiet,
- * editorial marker rather than a code-comment gimmick.
- */
 export default function SectionHeading({
   index,
   label,

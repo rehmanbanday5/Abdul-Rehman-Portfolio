@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  /* Surfaces */
+  
+
   --color-void: #0a0a0d;
   --color-surface: #141419;
   --color-surface-raised: #1b1b22;
@@ -9,24 +10,43 @@
   --color-hairline: #232329;
   --color-hairline-strong: #34343e;
 
-  /* Ink (text) — warm off-white, not clinical blue-white */
+
   --color-ink: #f1efe9;
   --color-ink-soft: #b6b3ac;
   --color-ink-mute: #7d7a73;
 
-  /* Signature accents */
-  --color-signal: #ff5a36;
-  --color-signal-soft: #ff5a361f;
-  --color-mint: #8fe3c0;
-  --color-mint-soft: #8fe3c01f;
-  --color-sand: #d8c9a3;
+  --color-signal: #4d7cff;
+  --color-signal-soft: #4B5563;
+  --color-mint: #8fa8ff;
+  --color-mint-soft: #8fa8ff1f;
+  --color-sand: #c8d2ff;
 
-  /* Typography */
-  --font-display: "Fraunces", "Iowan Old Style", serif;
+   
+
+  --font-display: "Space Grotesk", "Inter", sans-serif;
   --font-body: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+html.light {
+  --color-void: #f5f5f5;
+  --color-surface: #ebebeb;
+  --color-surface-raised: #ffffff;
+  --color-surface-hover: #e5e5e5;
+  --color-hairline: #d4d4d4;
+  --color-hairline-strong: #b8b8b8;
+
+  --color-ink: #111111;
+  --color-ink-soft: #4b4b4b;
+  --color-ink-mute: #777777;
+
+  --color-signal: #4d7cff;
+  --color-signal-soft: #e5ecff;
+  --color-mint: #5f7cff;
+  --color-mint-soft: #e8edff;
+  --color-sand: #6b7fc7;
 }
 
 @layer base {
@@ -89,7 +109,7 @@
     }
   }
 
-  /* Fine film-grain texture — replaces the old grid background */
+
   .grain::before {
     content: "";
     position: absolute;
@@ -105,10 +125,11 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: radial-gradient(ellipse 55% 45% at 50% 0%, rgba(255, 90, 54, 0.10), transparent 70%);
+    background: radial-gradient(ellipse 55% 45% at 50% 0%, rgba(77, 124, 255, 0.10), transparent 70%);
+
   }
 
-  /* Corner-bracket frame — signature motif used across the site */
+
   .bracket-frame {
     position: relative;
   }
@@ -146,7 +167,7 @@
   }
 }
 
-/* Custom cursor — only active on fine-pointer, non-touch devices */
+
 html.cursor-ready, html.cursor-ready * {
   cursor: none !important;
 }
@@ -159,8 +180,8 @@ html.cursor-ready, html.cursor-ready * {
 .cursor-ring[data-state="hover"] {
   width: 64px;
   height: 64px;
-  background-color: var(--color-ink);
-  border-color: transparent;
+  background-color: transparent;
+  border: 1px solid var(--color-signal);
   mix-blend-mode: normal;
 }
 .cursor-ring[data-state="hover"] ~ .cursor-dot,

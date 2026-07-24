@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Send } from "lucide-react";
-import { GithubIcon, LinkedinIcon, TwitterIcon } from "./icons";
+import { GithubIcon, LinkedinIcon, InstagramIcon } from "./icons";
 import { profile } from "../data/profile";
 import SectionHeading from "./SectionHeading";
 
@@ -11,10 +11,9 @@ gsap.registerPlugin(ScrollTrigger);
 const initialForm = { name: "", email: "", message: "" };
 
 const links = [
-  { label: "Email", value: profile.email, href: `mailto:${profile.email}` },
   { label: "GitHub", value: "github.com", href: profile.social.github, Icon: GithubIcon },
   { label: "LinkedIn", value: "linkedin.com", href: profile.social.linkedin, Icon: LinkedinIcon },
-  { label: "Twitter / X", value: "x.com", href: profile.social.twitter, Icon: TwitterIcon },
+  { label: "Instagram", value: "instagram.com", href: profile.social.instagram, Icon: InstagramIcon },
 ];
 
 export default function Contact() {
@@ -41,26 +40,22 @@ export default function Contact() {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+ const handleSubmit = (e) => {
+   e.preventDefault();
 
-    // -------------------------------------------------------------------
-    // EDIT ME: No email backend is connected yet. This currently opens
-    // the visitor's email client pre-filled with their message via a
-    // mailto: link. To collect messages directly, wire this handler up
-    // to a service like Formspree, EmailJS, or your own API endpoint —
-    // then replace the code below with your fetch/axios call.
-    // -------------------------------------------------------------------
-    const subject = encodeURIComponent(`Portfolio message from ${form.name}`);
-    const body = encodeURIComponent(
-      `${form.message}\n\n— ${form.name} (${form.email})`
-    );
-    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
+   const subject = encodeURIComponent(`Portfolio Message From ${form.name}`);
 
-    setStatus("sent");
-    setForm(initialForm);
-  };
+   const body = encodeURIComponent(
+     `${form.message}\n\nFrom: ${form.name}\nEmail: ${form.email}`,
+   );
 
+   const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${profile.email}&su=${subject}&body=${body}`;
+
+   window.open(gmailUrl, "_blank");
+
+   setStatus("sent");
+   setForm(initialForm);
+ };
   return (
     <section id="contact" ref={rootRef} className="py-24 md:py-36">
       <div className="container-px mx-auto max-w-7xl">
@@ -72,19 +67,25 @@ export default function Contact() {
         />
 
         <div className="mt-16 grid lg:grid-cols-[0.75fr_1.25fr] gap-16">
-          <div data-contact-reveal className="space-y-1 border-t border-hairline">
+          <div
+            data-contact-reveal
+            className="space-y-1 border-t border-hairline"
+          >
             {links.map(({ label, value, href, Icon }) => (
               <a
                 key={label}
                 href={href}
-                target={label === "Email" ? undefined : "_blank"}
-                rel={label === "Email" ? undefined : "noopener noreferrer"}
+                target="_blank"
+                rel="noopener noreferrer"
                 data-cursor="hover"
                 className="group flex items-center justify-between gap-4 py-5 border-b border-hairline transition-colors duration-300"
               >
                 <div className="flex items-center gap-3">
                   {Icon && (
-                    <Icon size={16} className="text-ink-mute transition-colors duration-300 group-hover:text-signal" />
+                    <Icon
+                      size={16}
+                      className="text-ink-mute transition-colors duration-300 group-hover:text-signal"
+                    />
                   )}
                   <span className="text-sm text-ink-soft">{label}</span>
                 </div>
@@ -103,7 +104,7 @@ export default function Contact() {
                 type="text"
                 value={form.name}
                 onChange={handleChange}
-                placeholder="Jane Doe"
+                placeholder="Abdul Rehman"
                 required
               />
               <Field
@@ -112,13 +113,16 @@ export default function Contact() {
                 type="email"
                 value={form.email}
                 onChange={handleChange}
-                placeholder="jane@company.com"
+                placeholder="rehmanbanday5@gmail.com"
                 required
               />
             </div>
 
             <div className="mt-8">
-              <label htmlFor="message" className="block text-xs font-mono uppercase tracking-wide text-ink-mute mb-2">
+              <label
+                htmlFor="message"
+                className="block text-xs font-mono uppercase tracking-wide text-ink-mute mb-2"
+              >
                 Message
               </label>
               <textarea
@@ -140,14 +144,11 @@ export default function Contact() {
               className="mt-10 group inline-flex items-center gap-2 bg-signal text-void font-medium px-6 py-3.5 rounded-md transition-transform duration-300 hover:-translate-y-0.5"
             >
               Send Message
-              <Send size={16} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+              <Send
+                size={16}
+                className="transition-transform duration-300 group-hover:translate-x-0.5"
+              />
             </button>
-
-            <p className="mt-4 text-xs text-ink-mute leading-relaxed" role="status">
-              {status === "sent"
-                ? "Opening your email client with this message pre-filled…"
-                : "This opens your email client — no backend is connected yet."}
-            </p>
           </form>
         </div>
       </div>

@@ -1,20 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 
-/**
- * Elegant dot + trailing-ring cursor.
- * - Disabled entirely on touch devices and when prefers-reduced-motion is set.
- * - Ring eases behind the pointer for a soft trailing feel; the dot tracks tightly.
- * - Hovering any element with `data-cursor="hover"` (or a, button, [role="button"],
- *   input, textarea) scales the ring into a soft filled circle.
- * - Hovering an element with `data-cursor-text="..."` shows a short label inside the ring.
- * - Hovering text inputs collapses the ring into a thin caret-like bar.
- *
- * IMPORTANT: the dot/ring elements are always rendered (never conditionally
- * unmounted) so their refs are attached before any GSAP call runs. Visibility
- * for disabled/touch cases is handled by never adding the "cursor-ready" class
- * and by keeping the elements at opacity: 0 until enabled.
- */
+
 export default function CustomCursor() {
   const dotRef = useRef(null);
   const ringRef = useRef(null);

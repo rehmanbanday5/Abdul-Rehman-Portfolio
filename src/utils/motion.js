@@ -3,8 +3,6 @@ import { CustomEase } from "gsap/CustomEase";
 
 gsap.registerPlugin(CustomEase);
 
-// Mirrors the CSS --ease-out-quart token so JS-driven and CSS-driven motion
-// feel like the same hand. Registered once, reused everywhere.
 export const EASE_QUART = CustomEase.create(
   "easeOutQuart",
   "M0,0 C0.25,1 0.5,1 1,1"
@@ -21,8 +19,8 @@ export const prefersReducedMotion = () =>
  * without changing their resting position or size.
  *
  * @param {HTMLElement} el
- * @param {{ strength?: number }} [options] strength = max px offset
- * @returns {() => void} cleanup function
+ * @param {{ strength?: number }} [options] 
+ * @returns {() => void} 
  */
 export function magnetic(el, { strength = 10 } = {}) {
   if (!el || prefersReducedMotion()) return () => {};

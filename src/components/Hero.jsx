@@ -6,8 +6,10 @@ import { scrollToId } from "../utils/scrollToId";
 import { GithubIcon, LinkedinIcon } from "./icons";
 import StackGraph from "./StackGraph";
 
+
 export default function Hero() {
   const rootRef = useRef(null);
+
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
@@ -83,10 +85,12 @@ export default function Hero() {
             className="font-display font-medium text-[13vw] sm:text-6xl md:text-7xl lg:text-[5.2rem] leading-[0.98] text-ink -ml-0.5"
           >
             <span className="block overflow-hidden">
-              <span className="word inline-block">{profile.firstName}</span>
+              <span className="word inline-block italic">
+                {profile.firstName}
+              </span>
             </span>
             <span className="block overflow-hidden">
-              <span className="word inline-block italic text-ink-mute">
+              <span className="word inline-block italic -ml-1 text-ink-mute">
                 Rehman
               </span>
             </span>
@@ -96,7 +100,7 @@ export default function Hero() {
             data-hero-role
             className="mt-6 font-mono text-sm sm:text-base tracking-wide text-signal"
           >
-            {profile.title} <span className="text-ink-mute">/ MERN Stack</span>
+            {profile.title} <span className="text-ink-mute"></span>
           </p>
 
           <p
@@ -106,25 +110,18 @@ export default function Hero() {
             {profile.heroDescription}
           </p>
 
-          <div data-hero-cta className="mt-10 flex flex-wrap items-center gap-4">
-            <button
-              data-cursor="hover"
-              onClick={() => scrollToId("#projects")}
-              className="group inline-flex items-center gap-2 bg-signal text-void font-medium px-6 py-3.5 rounded-md transition-transform duration-300 hover:-translate-y-0.5"
-            >
-              View My Work
-              <ArrowUpRight
-                size={18}
-                className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              />
-            </button>
-
+          <div
+            data-hero-cta
+            className="mt-10 flex flex-wrap items-center gap-4"
+          >
             <button
               data-cursor="hover"
               onClick={() => scrollToId("#contact")}
-              className="inline-flex items-center gap-2 border border-hairline-strong text-ink font-medium px-6 py-3.5 rounded-md transition-colors duration-300 hover:border-ink"
+              className="group inline-flex items-center gap-2 bg-transparent text-ink font-medium px-6 py-3.5 rounded-lg border border-hairline-strong transition-colors duration-500 hover:border-signal hover:text-signal"
             >
-              Contact Me
+              <span className="inline-block transition-transform duration-850 ease-out group-hover:[transform:rotateX(360deg)]">
+                Contact Me
+              </span>
             </button>
 
             <a
@@ -136,29 +133,6 @@ export default function Hero() {
             >
               <Download size={16} />
               Resume
-            </a>
-          </div>
-
-          <div data-hero-social className="mt-12 flex items-center gap-5">
-            <a
-              data-cursor="hover"
-              href={profile.social.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub profile"
-              className="text-ink-mute hover:text-ink transition-colors duration-300"
-            >
-              <GithubIcon size={19} />
-            </a>
-            <a
-              data-cursor="hover"
-              href={profile.social.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn profile"
-              className="text-ink-mute hover:text-ink transition-colors duration-300"
-            >
-              <LinkedinIcon size={19} />
             </a>
           </div>
         </div>
