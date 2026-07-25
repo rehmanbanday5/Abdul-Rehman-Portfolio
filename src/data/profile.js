@@ -9,9 +9,15 @@ export const profile = {
   heroDescription:
     "I'm a developer focused on turning ideas into fast, reliable products — from database schema to pixel-perfect UI. I care about clean architecture, thoughtful UX, and code that's easy to maintain.",
   aboutParagraphs: [
-    "I'm a MERN Stack Developer with experience in HTML, CSS, JavaScript, Bootstrap, React, MongoDB, Express.js, and Node.js. I enjoy building modern, responsive, and user-friendly web applications while working across both the frontend and backend.",
-    "I'm currently available for MERN stack development work and new projects, ready to turn ideas into modern, reliable, and scalable web applications.",
+    `I am a motivated and hardworking Software Engineering student at SZABIST University Islamabad, passionate about technology and continuously expanding my skills in software development.
+
+I am a MERN Stack Developer with experience in building modern and responsive web applications using MongoDB, Express.js, React.js, and Node.js. I enjoy turning ideas into practical digital solutions and improving my skills through real-world projects.
+
+Currently, I am also learning Python and exploring backend development to strengthen my programming fundamentals and gain a deeper understanding of backend technologies.
+
+I am always open to tech opportunities, internships, and collaborations that allow me to gain practical experience, learn new technologies, and grow as a developer.`,
   ],
+
   email: "rehmanbanday5@gmail.com",
   resumeUrl: "/resume.pdf",
   social: {

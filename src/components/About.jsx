@@ -70,11 +70,7 @@ export default function About() {
             {profile.aboutParagraphs.map((para, i) => (
               <p
                 key={i}
-                className={`leading-relaxed ${
-                  i === 0
-                    ? "text-xl sm:text-2xl font-display text-ink"
-                    : "text-ink-soft text-base sm:text-lg"
-                }`}
+                className="text-ink-soft text-base sm:text-lg font-normal leading-relaxed text-justify"
               >
                 {para}
               </p>
