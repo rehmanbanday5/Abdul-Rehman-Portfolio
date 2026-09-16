@@ -2,8 +2,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ArrowUpRight, Download } from "lucide-react";
 import { profile } from "../data/profile";
-import { scrollToId } from "../utils/scrollToId";
-import { GithubIcon, LinkedinIcon } from "./icons";
+import { scrollToId } from "../utils/scrollToId"
 import StackGraph from "./StackGraph";
 
 

@@ -3,6 +3,7 @@ import Snapup from "../assets/Snapup.jpeg"
 import Launch from "../assets/Launch.jpeg"
 import TaskApp from "../assets/TaskApp.jpeg"
 import WeatherApp from "../assets/WeatherApp.jpeg"
+import HDR from "../assets/HDR.jpeg"
 
 export const projects = [
   {
@@ -24,6 +25,24 @@ export const projects = [
   },
   {
     id: "proj-02",
+    name: "HDR Sports E-Commerce Platform",
+    description:
+      "A modern full-stack e-commerce platform developed for a cricket equipment business, featuring a responsive shopping experience, product browsing, product details, cart functionality, and a cricket-focused user interface.",
+    image: HDR,
+    tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+    features: [
+      "Responsive and modern cricket-focused e-commerce interface",
+      "Product browsing with detailed product views",
+      "Add-to-cart and dynamic cart management functionality",
+      "Backend APIs built with Node.js and Express",
+      "MongoDB integration for managing e-commerce data",
+    ],
+    liveUrl: "https://hdr-sports.vercel.app/",
+    githubUrl: "https://github.com/rehmanbanday5/HDR-Sports",
+    featured: true,
+  },
+  {
+    id: "proj-03",
     name: "Snapup — E-Commerce Project",
     description:
       "An e-commerce website designed for a smooth online shopping experience, featuring a clean product-focused interface and essential shopping functionality.",
@@ -41,7 +60,7 @@ export const projects = [
     featured: true,
   },
   {
-    id: "proj-03",
+    id: "proj-04",
     name: "Launch Landing Page",
     description:
       "A practice landing page built to explore modern website layouts and responsive front-end development, featuring a product-focused hero section, services, feature highlights, pricing plans, and a contact section.",
@@ -59,7 +78,7 @@ export const projects = [
     featured: true,
   },
   {
-    id: "proj-01",
+    id: "proj-05",
     name: "Simple Task App",
     description:
       "A simple task management application built to practice interactive front-end development, allowing users to create tasks with descriptions, priority levels, and optional images.",
@@ -76,7 +95,7 @@ export const projects = [
     featured: true,
   },
   {
-    id: "proj-05",
+    id: "proj-06",
     name: "Weather App",
     description:
       "A weather application built to practice working with real-time weather data and API integration, allowing users to search for a location and view its current weather conditions.",
