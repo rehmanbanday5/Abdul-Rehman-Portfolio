@@ -19,7 +19,7 @@ I am always open to tech opportunities, internships, and collaborations that all
   ],
 
   email: "rehmanbanday5@gmail.com",
-  resumeUrl: "/Mern Stack Resume.pdf",
+  resumeUrl: "/Master Resume.pdf",
   social: {
     github: "https://github.com/rehmanbanday5",
     linkedin: "https://www.linkedin.com/in/abdulrehmanbanday",
